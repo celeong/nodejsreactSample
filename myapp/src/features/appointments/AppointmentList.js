@@ -5,8 +5,6 @@ import {
 } from "@material-ui/core";
 import { getAllAppointments, deleteAppointment } from '../../services/appointmentService';
 
-// GOOGLE API AIzaSyBPbrNHm38U6o_g9lvcxG2BrN5mt_QtLrQ
-
 export const AppointmentList = () => {
     const [state, setState] = useState([]);
     const [hasError, setHasError] = useState(false);
