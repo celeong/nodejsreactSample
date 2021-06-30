@@ -13,8 +13,14 @@ exports.addAppointment = async (request, response) => {
     await mongoClient.connect();
     
     var dbo = mongoClient.db("mydb");
-    dbo.collection("appointments")
-       .insertOne(appointment);
+    await dbo.collection("appointments")
+        .insertOne(appointment);
     console.log("1 document inserted");
-    mongoClient.close();
+
+    //response.json(appointment);
+
+    if (mongoClient.isConnected()) {
+        console.log("closing connection");
+        mongoClient.close(); 
+    }
 };

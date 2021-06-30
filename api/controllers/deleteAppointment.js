@@ -3,7 +3,6 @@ const MONGOID = process.env.MONGOID;
 
 const uri = `mongodb+srv://${MONGOID}@cluster0.j3vho.mongodb.net/mydb?retryWrites=true&w=majority`;
 
-
 exports.deleteAppointment = async (request, response) => {
     const { id } = request.params;
 
